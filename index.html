@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mind Twister - Brain Games</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #3d3d3d;
+            color: white;
+            padding: 1em;
+            text-align: center;
+        }
+        nav {
+            text-align: center;
+            margin-top: 10px;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #3d3d3d;
+            font-weight: bold;
+        }
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 20px;
+            background-color: white;
+        }
+        .game-card {
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin-bottom: 30px;
+            border-radius: 5px;
+        }
+        footer {
+            text-align: center;
+            padding: 1em;
+            background-color: #3d3d3d;
+            color: white;
+            margin-top: 30px;
+        }
+        canvas {
+            margin-top: 10px;
+        }
+        button {
+            margin-top: 10px;
+            padding: 10px;
+            font-size: 14px;
+        }
+        input[type="text"] {
+            font-size: 16px;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Mind Twister</h1>
+        <p>Daily Brain Games & Puzzles</p>
+    </header>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Games</a>
+        <a href="#">Blog</a>
+        <a href="#">Contact</a>
+    </nav>
+
+    <div class="container">
+        <h2>Play Brain Games</h2>
+
+        <div class="game-card">
+            <h3>Memory Match</h3>
+            <p>Click two cards to match them. Try to remember positions!</p>
+            <iframe src="https://games.construct.net/1799/latest" width="100%" height="400px"></iframe>
+        </div>
+
+        <div class="game-card">
+            <h3>Sudoku Puzzle</h3>
+            <iframe src="https://sudoku.com/embed?level=easy" width="100%" height="600px" frameborder="0"></iframe>
+        </div>
+
+        <div class="game-card">
+            <h3>Word Scramble</h3>
+            <p>Unscramble the word: <strong id="scrambled-word">TAC</strong></p>
+            <input type="text" id="guess" placeholder="Your guess">
+            <button onclick="checkWord()">Check</button>
+            <p id="result"></p>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2025 Mind Twister | Boost Your Brain Daily
+    </footer>
+
+    <script>
+        const word = "CAT";
+        const scrambled = "TAC";
+        document.getElementById("scrambled-word").innerText = scrambled;
+
+        function checkWord() {
+            const guess = document.getElementById("guess").value.toUpperCase();
+            const result = document.getElementById("result");
+            if (guess === word) {
+                result.innerText = "Correct!";
+                result.style.color = "green";
+            } else {
+                result.innerText = "Try again!";
+                result.style.color = "red";
+            }
+        }
+    </script>
+</body>
+</html>
